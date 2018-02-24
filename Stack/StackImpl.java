@@ -21,7 +21,6 @@ public class StackImpl<T> implements StackInterface<T> {
 	
 		if(isEmpty()) return null;
 		System.out.println("Item popped: "+ stack[top]);
-		stack[top]=null;
 		return stack[top--];
 	}
 
@@ -46,13 +45,8 @@ public class StackImpl<T> implements StackInterface<T> {
 	@Override
 	public void clear() {
 
-		for(T item:stack ){
-			if(item!=null){
-				System.out.println("Item gonna be deleted: "+ item);
-				item=null;
-				top--;
-			}
-			
+		while(top!=-1){
+			System.out.println("Item deleted: "+ pop());
 		}
 		
 	}
